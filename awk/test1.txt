@@ -1,0 +1,5 @@
+www,19,teacher
+kkk,20,worker
+eee,21,farmer
+qqq,22,docter
+ppp,23,dentist
