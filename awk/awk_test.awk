@@ -16,5 +16,5 @@ cat test1.txt | awk -F ',' '/tea|wor|22/{print $0}' > ./test1_3.txt
 # 如果第三个字段匹配上tea，则打印出该第三个字段
 cat test1.txt | awk -F ',' '$3~/tea/{print $3}' > test1_4.txt
 
-# 查看hive表大小（方便的可以统计分区表大小！），并且输出为单位为G
+# 查看hive表大小（方便地统计分区表大小！），并且输出单位为G
 hadoop fs -du hdfs:XXXXXX | awk '{SUM += $1} END {print SUM/(1024*1024*1024)}'
