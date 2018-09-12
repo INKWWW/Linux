@@ -17,5 +17,5 @@ cat test1.txt | awk -F ',' '$3~/tea/{print $3}' > test1_4.txt
 # 查看hive表大小（方便地统计分区表大小！），并且输出单位为G
 hadoop fs -du hdfs:XXXXXX | awk '{SUM += $1} END {print SUM/(1024*1024*1024)}'
 
-# 替换数据中的好坏为0/1标签
+# 替换数据中的好坏为0/1标签 （以逗号为分隔符取出数据，替换‘好’为0并且赋值给第6项，替换‘坏’为1并且赋值给第6项。然后打印整行，以逗号分隔。重定向到xxx.txt）
 cat xx.txt | awk -F ',' '{sub(/好/, "0", $6);sub(/坏/, "1", $6);print $0}' OFS=',' > ./xxx.txt
