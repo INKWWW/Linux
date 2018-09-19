@@ -1,0 +1,1 @@
+select * from ${source_table} limit ${row_num};
